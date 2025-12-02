@@ -1,0 +1,270 @@
+@use "_variables" as *;
+@use "_functions" as *;
+@use "_mixins" as *;
+
+body{
+	margin: 0;
+	background-color: $fake-white;
+	font-family: "Syne", sans-serif;
+	font-size: clamp(10px, pxToVw(16), 22px);
+
+	a{
+		&:link, &:visited, &:hover, &:active{
+			text-decoration: none;
+			color: initial;
+		}
+	}
+
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+}
+
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	.header-wrapper{
+		position: relative;
+		box-sizing: border-box;
+		border: solid pxToEm(1.5) $fake-black;
+		background-color: $jaune;
+		text-align: center;
+		width: calc(100% - pxToEm(46));
+		height: pxToEm(46);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.title{
+			margin: auto 0;
+			line-height: 0.8;
+			font-weight: 600;
+			font-size: pxToEm(26);
+			letter-spacing: 1.5%;
+			color: $title-black;
+			user-select: none;
+		}
+	}
+
+	#menu-burger{
+		width: pxToEm(46);
+		height: pxToEm(46);
+		background-color: $fake-black;
+		box-sizing: border-box;
+		color: white;
+		position: relative;
+
+		.picto{
+			position: absolute;
+			inset: 50%;
+			transform: translate(-50%, -50%);
+			width: pxToEm(24);
+			height: pxToEm(24);
+			display: none;
+
+			svg{
+				height: 100%;
+				width: 100%;
+			}
+
+			&.actived{
+				display: block;
+			}
+		}
+	}
+
+	.menu{
+		background-color: $dark-grey;
+		width: 100%;
+		box-sizing: border-box;
+		padding: pxToEm(32) pxToEm(16);
+		height: auto;
+		max-height: 100dvh;
+		overflow: scroll;
+
+		// Ouvertures fermetures
+		display: none;
+		.sub-menu{
+			display: none;
+		}
+		.visible, &.visible{
+			display: block;
+		}
+
+
+		// Menu principal
+		.main-menu{
+			.link{
+				display: block;
+				position: relative;
+				font-weight: 700;
+				font-size: pxToEm(30);
+				padding: pxToEm(30, 30) pxToEm(16, 30);
+				color: white;
+
+				&:link, &:visited{
+					color: white;
+					text-decoration: none;
+				}
+				&:hover, &:active{
+					color: $jaune;
+					text-decoration: none;
+					cursor: pointer;
+				}
+
+				&::before{
+					@include before-line;
+				}
+			}
+			
+			.icone{
+				display: inline-block;
+				width: pxToEm(30, 30);
+				height: pxToEm(30, 30);
+				position: relative;
+				top: 0.25em;
+				
+				svg{
+					height: 100%;
+					width: 100%;
+				}
+				
+				&.opened{
+					transform: rotate(90deg);
+				}
+			}
+
+			#collectif::after{
+				@include before-line;
+				top: unset;
+				bottom: 0;
+			}
+		}
+		// Fin du menu principal
+
+
+		// Menu secondaire
+		.sub-menu{
+			.slogan{
+				display: block;
+				position: relative;
+				padding: pxToEm(30, 40) pxToEm(16, 40);
+				font-size: pxToEm(40);
+				font-weight: 700;
+				text-transform: uppercase;
+				line-height: 0.9;
+
+				&:link, &:visited{
+					color: white;
+				}
+				
+				&#pute:hover, &#pute:active{
+					color: $rose;
+				}
+				&#fils:hover, &#fils:active{
+					color: $violet;
+				}
+				&#vigilente:hover, &#vigilente:active{
+					color: $orange;
+				}
+
+				&::before{
+					@include before-line();
+				}
+			}
+			// Fin des slogans
+		}
+		// Fin du menu secondaire
+	}
+	// Fin menu
+}
+// Fin header
+
+
+@media screen and (min-width: map-get($breakpoints, "desk")){
+	body{
+		font-size: clamp(14px, pxToVw(16, "desktop"), 22px);
+	}
+
+	.header{
+		.header-wrapper{
+			width: 100%;
+			height: pxToEm(100);
+			border-width: clamp(1px, pxToVw(1.5, "desktop"), 2px);
+			border-color: black;
+
+			.title{
+				font-size: pxToEm(64);
+			}
+		}
+
+		#menu-burger{
+			display: none;
+		}
+
+		.menu{
+			position: relative;
+			display: block;
+			background-color: $fake-black;
+			overflow: visible;
+			padding: pxToEm(8) pxToEm(110);
+
+			// Menu principal
+			.main-menu{
+				display: flex;
+				flex-direction: row;
+				align-items: baseline;
+				justify-content: space-between;
+				z-index: 1;
+				
+				.link{
+					text-align: center;
+					font-size: pxToEm(24);
+					padding: 0;
+					
+					&::before, &::after{
+						display: none;
+					}
+				}
+			}
+			// Fin du menu principal
+
+			// Menu secondaire
+			.sub-menu{
+				position: absolute;
+				background-color: $dark-grey;
+				top: 100%;
+				left: 0;
+				width: 100vw;
+				height: auto;
+				box-sizing: border-box;
+				padding: pxToEm(24) pxToEm(52);
+				height: fit-content;
+				max-height: calc(100vh - 2.2em - pxToEm(100));
+				overflow-y: scroll;
+
+				.slogan{
+					font-size: pxToEm(70);
+					padding: pxToEm(45, 70) pxToEm(58, 70);
+
+					&#vigilente::after{
+						@include before-line();
+						top: unset;
+						bottom: 0;
+					}
+				}
+			}
+			// fin du menu secondaire
+		}
+		// Fin menu
+	}
+	// Fin header
+}
+// Fin du Media Query

@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  background-color: #FCFCFC;
+  font-family: "Syne", sans-serif;
+  font-size: clamp(10px, 4.2666666667vw, 22px);
+}
+body a:link, body a:visited, body a:hover, body a:active {
+  text-decoration: none;
+  color: initial;
+}
+body ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header .header-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  border: solid 0.09375em #141414;
+  background-color: #FCFF74;
+  text-align: center;
+  width: calc(100% - 2.875em);
+  height: 2.875em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header-wrapper .title {
+  margin: auto 0;
+  line-height: 0.8;
+  font-weight: 600;
+  font-size: 1.625em;
+  letter-spacing: 1.5%;
+  color: #101010;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.header #menu-burger {
+  width: 2.875em;
+  height: 2.875em;
+  background-color: #141414;
+  box-sizing: border-box;
+  color: white;
+  position: relative;
+}
+.header #menu-burger .picto {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.5em;
+  height: 1.5em;
+  display: none;
+}
+.header #menu-burger .picto svg {
+  height: 100%;
+  width: 100%;
+}
+.header #menu-burger .picto.actived {
+  display: block;
+}
+.header .menu {
+  background-color: #202020;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2em 1em;
+  height: auto;
+  max-height: 100dvh;
+  overflow: scroll;
+  display: none;
+}
+.header .menu .sub-menu {
+  display: none;
+}
+.header .menu .visible, .header .menu.visible {
+  display: block;
+}
+.header .menu .main-menu .link {
+  display: block;
+  position: relative;
+  font-weight: 700;
+  font-size: 1.875em;
+  padding: 1em 0.5333333333em;
+  color: white;
+}
+.header .menu .main-menu .link:link, .header .menu .main-menu .link:visited {
+  color: white;
+  text-decoration: none;
+}
+.header .menu .main-menu .link:hover, .header .menu .main-menu .link:active {
+  color: #FCFF74;
+  text-decoration: none;
+  cursor: pointer;
+}
+.header .menu .main-menu .link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+.header .menu .main-menu .icone {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  top: 0.25em;
+}
+.header .menu .main-menu .icone svg {
+  height: 100%;
+  width: 100%;
+}
+.header .menu .main-menu .icone.opened {
+  transform: rotate(90deg);
+}
+.header .menu .main-menu #collectif::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  top: unset;
+  bottom: 0;
+}
+.header .menu .sub-menu .slogan {
+  display: block;
+  position: relative;
+  padding: 0.75em 0.4em;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+.header .menu .sub-menu .slogan:link, .header .menu .sub-menu .slogan:visited {
+  color: white;
+}
+.header .menu .sub-menu .slogan#pute:hover, .header .menu .sub-menu .slogan#pute:active {
+  color: #F40066;
+}
+.header .menu .sub-menu .slogan#fils:hover, .header .menu .sub-menu .slogan#fils:active {
+  color: #7D6EFF;
+}
+.header .menu .sub-menu .slogan#vigilente:hover, .header .menu .sub-menu .slogan#vigilente:active {
+  color: #FC662E;
+}
+.header .menu .sub-menu .slogan::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+
+@media screen and (min-width: 767.5px) {
+  body {
+    font-size: clamp(14px, 1.1111111111vw, 22px);
+  }
+  .header .header-wrapper {
+    width: 100%;
+    height: 6.25em;
+    border-width: clamp(1px, 0.1041666667vw, 2px);
+    border-color: black;
+  }
+  .header .header-wrapper .title {
+    font-size: 4em;
+  }
+  .header #menu-burger {
+    display: none;
+  }
+  .header .menu {
+    position: relative;
+    display: block;
+    background-color: #141414;
+    overflow: visible;
+    padding: 0.5em 6.875em;
+  }
+  .header .menu .main-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    z-index: 1;
+  }
+  .header .menu .main-menu .link {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0;
+  }
+  .header .menu .main-menu .link::before, .header .menu .main-menu .link::after {
+    display: none;
+  }
+  .header .menu .sub-menu {
+    position: absolute;
+    background-color: #202020;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    box-sizing: border-box;
+    padding: 1.5em 3.25em;
+    height: -moz-fit-content;
+    height: fit-content;
+    max-height: calc(100vh - 2.2em - 6.25em);
+    overflow-y: scroll;
+  }
+  .header .menu .sub-menu .slogan {
+    font-size: 4.375em;
+    padding: 0.6428571429em 0.8285714286em;
+  }
+  .header .menu .sub-menu .slogan#vigilente::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    top: unset;
+    bottom: 0;
+  }
+}/*# sourceMappingURL=header.css.map */

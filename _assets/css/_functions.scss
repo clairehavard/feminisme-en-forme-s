@@ -1,0 +1,17 @@
+// PX en VW
+@function pxToVw($px, $viewport: mobile) {
+	$viewportMobile: 375;
+	$viewportDesktop: 1440;
+
+	@if $viewport ==desktop {
+		@return ($px / $viewportDesktop) * 100 * 1vw;
+	}
+
+	@return ($px / $viewportMobile) * 100 * 1vw;
+}
+
+// PX en EM
+@function pxToEm($px, $base: 16) {
+	@return ($px / $base) * 1em;
+}
+
