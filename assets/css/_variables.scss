@@ -1,0 +1,49 @@
+// Couleurs
+$jaune: #FCFF74;
+$violet: #7D6EFF;
+$rose: #F40066;
+$orange: #FC662E;
+
+// échelle de gris
+$fake-white: #FCFCFC;
+$light-grey: #f0f0f0;
+$middle-grey: #D9D9D9;
+$dark-grey: #202020;
+$fake-black: #141414;
+$title-black: #101010;
+
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne-ExtraBold.woff2") format("woff2");
+	font-weight: 800;
+	font-style: normal;
+}

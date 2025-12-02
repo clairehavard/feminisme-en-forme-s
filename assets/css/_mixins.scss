@@ -1,0 +1,20 @@
+$breakpoints: (
+	"desk": 767.5px,
+);
+
+// ========== Mixins ==========
+@mixin min-media($_key) {
+	@media screen and (min-width: map-get($breakpoints, $_key)) {
+		&{ @content; }
+	}
+}
+
+@mixin before-line{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1px;
+	background-color: white;
+}
