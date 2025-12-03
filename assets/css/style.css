@@ -24,7 +24,7 @@ ul {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  margin-top: 5.125em;
+  margin: 5.125em 0;
   padding: 0 1.875em;
 }
 .main .manifest .labeur {
@@ -46,7 +46,13 @@ ul {
   text-transform: uppercase;
   background-color: #FCFF74;
   border: solid 0.0625em #101010;
+  color: #101010;
   margin-top: 1.5em;
+}
+.main .cta:hover, .main .cta:active {
+  background-color: #101010;
+  color: #FCFCFC;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 767.5px) {
@@ -54,7 +60,7 @@ ul {
     font-size: clamp(14px, 1.1111111111vw, 22px);
   }
   .main {
-    margin: 15em auto 0;
+    margin: 12.5em auto 3.75em;
     padding: 0 6.875em;
     max-width: 1920px;
   }

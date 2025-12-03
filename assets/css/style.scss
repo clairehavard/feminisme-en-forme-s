@@ -35,7 +35,7 @@ ul{
 	position: relative;
 	width: 100%;
 	box-sizing: border-box;
-	margin-top: pxToEm(82);
+	margin: pxToEm(82) 0;
 	padding: 0 pxToEm(30);
 
 	.manifest{
@@ -61,7 +61,15 @@ ul{
 		text-transform: uppercase;
 		background-color: $jaune;
 		border: solid pxToEm(1.5, 24) $title-black;
+		color: $title-black;
 		margin-top: 1.5em;
+
+		&:hover, &:active{
+			background-color: $title-black;
+			color: $fake-white;
+			cursor: pointer;
+		}
+
 	}
 }
 
@@ -71,7 +79,7 @@ ul{
 	}
 
 	.main{
-		margin: pxToEm(240) auto 0;
+		margin: pxToEm(200) auto pxToEm(60);
 		padding: 0 pxToEm(110);
 		max-width: 1920px;
 
