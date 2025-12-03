@@ -25,15 +25,14 @@ window.addEventListener("DOMContentLoaded", function () {
 	const icone = document.querySelector("#manifester .icone");
 
 	// Pour que le menu s'ouvre en mobile
-	if (window.innerWidth < 768) {
-		const menuStyles = window.getComputedStyle(mainMenu);
-		if (menuStyles.display === "none") {
-			mainMenu.classList.add("visible");
-		}
-	}
-
 	slogans.forEach(slogan => {
 		slogan.addEventListener("click", () => {
+
+			// Pour le mobile
+			if (window.innerWidth < 768 && !mainMenu.classList.contains("visible")) {
+				mainMenu.classList.add("visible");
+			}
+
 			subMenu.classList.toggle("visible");
 			icone.classList.toggle("opened");
 		});
