@@ -78,10 +78,13 @@ button {
 .main .extern-link .ext-icon {
   display: inline-block;
   position: relative;
+  top: 0.15em;
+  height: 0.9em;
+  width: 0.7em;
 }
 .main .extern-link .ext-icon svg {
   height: 100%;
-  width: 100%;
+  width: 130%;
 }
 .main .manifeste, .main .collectif {
   width: 100%;
