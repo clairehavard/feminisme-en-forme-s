@@ -24,6 +24,18 @@ button {
   font-weight: 700;
 }
 
+.rose {
+  color: #F40066;
+}
+
+.violet {
+  color: #7D6EFF;
+}
+
+.orange {
+  color: #FC662E;
+}
+
 .main {
   position: relative;
   width: 100%;

@@ -68,7 +68,7 @@
 		padding: pxToEm(32) pxToEm(16);
 		height: auto;
 		max-height: 100dvh;
-		overflow: scroll;
+		overflow-y: scroll;
 
 		// Ouvertures fermetures
 		display: none;
@@ -223,7 +223,7 @@
 				width: 100vw;
 				height: auto;
 				box-sizing: border-box;
-				padding: pxToEm(24) pxToEm(52);
+				padding: 0 pxToEm(52) pxToEm(24);
 				height: fit-content;
 				max-height: calc(100vh - 2.2em - pxToEm(100));
 				overflow-y: scroll;

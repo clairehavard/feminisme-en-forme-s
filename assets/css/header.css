@@ -60,7 +60,7 @@
   padding: 2em 1em;
   height: auto;
   max-height: 100dvh;
-  overflow: scroll;
+  overflow-y: scroll;
   display: none;
 }
 .header .menu .sub-menu {
@@ -199,7 +199,7 @@
     width: 100vw;
     height: auto;
     box-sizing: border-box;
-    padding: 1.5em 3.25em;
+    padding: 0 3.25em 1.5em;
     height: -moz-fit-content;
     height: fit-content;
     max-height: calc(100vh - 2.2em - 6.25em);
