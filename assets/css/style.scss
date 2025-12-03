@@ -42,12 +42,10 @@ button{
 	margin: pxToEm(82) 0;
 	padding: 0 pxToEm(30);
 
-	.manifest{
-		.labeur{
-			font-size: pxToEm(18);
-			line-height: 1.35;
-			margin: 0 0 pxToEm(15);
-		}
+	.labeur{
+		font-size: pxToEm(18);
+		line-height: 1.35;
+		margin: 0 0 pxToEm(15);
 	}
 
 	.cta-container{
@@ -73,7 +71,21 @@ button{
 			color: $fake-white;
 			cursor: pointer;
 		}
+	}
 
+	.extern-link{
+		font-weight: 700;
+		position: relative;
+
+		&::after{
+			content: "";
+			height: pxToEm(1.5);
+			width: 100%;
+		}
+	}
+
+	.manifeste, .collectif{
+		width: 100%;
 	}
 }
 
@@ -87,20 +99,26 @@ button{
 		padding: 0 pxToEm(110);
 		max-width: 1920px;
 
-		.manifest{
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: pxToEm(40);
-
-			.labeur{
-				font-size: pxToEm(24);
-			}
+		.labeur{
+			font-size: pxToEm(24);
 		}
 
 		.cta{
 			font-size: pxToEm(32);
 			padding: pxToEm(20, 32) pxToEm(60, 32);
-			margin-top: 1.5em;
+			margin-top: 1em;
 		}
+
+		.manifest{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: pxToEm(40);
+		}
+
+		.collectif{
+			margin: auto;
+			max-width: pxToEm(590);
+		}
+
 	}
 }

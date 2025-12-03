@@ -31,7 +31,7 @@ button {
   margin: 5.125em 0;
   padding: 0 1.875em;
 }
-.main .manifest .labeur {
+.main .labeur {
   font-size: 1.125em;
   line-height: 1.35;
   margin: 0 0 0.9375em;
@@ -58,6 +58,18 @@ button {
   color: #FCFCFC;
   cursor: pointer;
 }
+.main .extern-link {
+  font-weight: 700;
+  position: relative;
+}
+.main .extern-link::after {
+  content: "";
+  height: 0.09375em;
+  width: 100%;
+}
+.main .manifeste, .main .collectif {
+  width: 100%;
+}
 
 @media screen and (min-width: 767.5px) {
   body {
@@ -68,17 +80,21 @@ button {
     padding: 0 6.875em;
     max-width: 1920px;
   }
-  .main .manifest {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5em;
-  }
-  .main .manifest .labeur {
+  .main .labeur {
     font-size: 1.5em;
   }
   .main .cta {
     font-size: 2em;
     padding: 0.625em 1.875em;
-    margin-top: 1.5em;
+    margin-top: 1em;
+  }
+  .main .manifest {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5em;
+  }
+  .main .collectif {
+    margin: auto;
+    max-width: 36.875em;
   }
 }/*# sourceMappingURL=style.css.map */
