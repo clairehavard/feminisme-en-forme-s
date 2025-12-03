@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", function () {
 			// Pour le mobile
 			if (window.innerWidth < 768 && !mainMenu.classList.contains("visible")) {
 				mainMenu.classList.toggle("visible");
-				icone.classList.toggle("opened");
+				icone.classList.add("opened");
 			}
 
 			subMenu.classList.toggle("visible");
