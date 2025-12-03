@@ -32,6 +32,22 @@ ul {
   line-height: 1.35;
   margin: 0 0 0.9375em;
 }
+.main .cta-container {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.main .cta {
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 0.625em 1.875em;
+  border-radius: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #FCFF74;
+  border: solid 0.0625em #101010;
+  margin-top: 1.5em;
+}
 
 @media screen and (min-width: 767.5px) {
   body {
@@ -49,5 +65,10 @@ ul {
   }
   .main .manifest .labeur {
     font-size: 1.5em;
+  }
+  .main .cta {
+    font-size: 2em;
+    padding: 0.625em 1.875em;
+    margin-top: 1.5em;
   }
 }/*# sourceMappingURL=style.css.map */
