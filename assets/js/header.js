@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
 	// Ouverture sous-menu Slogan
-	const slogan = document.querySelector("#manifester");
+	const slogan = document.querySelectorAll(".manifester");
 	const subMenu = document.querySelector(".sub-menu");
 	const icone = document.querySelector("#manifester .icone");
 
