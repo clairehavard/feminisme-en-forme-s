@@ -76,6 +76,9 @@
   font-size: 1.875em;
   padding: 1em 0.5333333333em;
   color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .header .menu .main-menu .link:link, .header .menu .main-menu .link:visited {
   color: white;
@@ -128,6 +131,9 @@
   font-weight: 700;
   text-transform: uppercase;
   line-height: 0.9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .header .menu .sub-menu .slogan:link, .header .menu .sub-menu .slogan:visited {
   color: white;
@@ -203,7 +209,7 @@
     font-size: 4.375em;
     padding: 0.6428571429em 0.8285714286em;
   }
-  .header .menu .sub-menu .slogan#vigilente::after {
+  .header .menu .sub-menu .slogan#fils::after, .header .menu .sub-menu .slogan#pute::after {
     content: "";
     position: absolute;
     left: 0;
@@ -213,5 +219,8 @@
     background-color: white;
     top: unset;
     bottom: 0;
+  }
+  .header .menu .sub-menu .slogan::before {
+    display: none;
   }
 }/*# sourceMappingURL=header.css.map */

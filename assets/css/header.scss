@@ -89,6 +89,7 @@
 				font-size: pxToEm(30);
 				padding: pxToEm(30, 30) pxToEm(16, 30);
 				color: white;
+				user-select: none;
 
 				&:link, &:visited{
 					color: white;
@@ -141,6 +142,7 @@
 				font-weight: 700;
 				text-transform: uppercase;
 				line-height: 0.9;
+				user-select: none;
 
 				&:link, &:visited{
 					color: white;
@@ -230,10 +232,14 @@
 					font-size: pxToEm(70);
 					padding: pxToEm(45, 70) pxToEm(58, 70);
 
-					&#vigilente::after{
+					&#fils::after, &#pute::after{
 						@include before-line();
 						top: unset;
 						bottom: 0;
+					}
+
+					&::before{
+						display: none;
 					}
 				}
 			}
