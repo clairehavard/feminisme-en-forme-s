@@ -60,123 +60,128 @@
 			}
 		}
 	}
-
-	.menu{
-		background-color: $dark-grey;
-		width: 100%;
-		box-sizing: border-box;
-		padding: pxToEm(32) pxToEm(16);
-		height: auto;
-		max-height: 100dvh;
-		overflow-y: scroll;
-
-		// Ouvertures fermetures
-		display: none;
-		.sub-menu{
-			display: none;
-		}
-		.visible, &.visible{
-			display: block;
-		}
-
-
-		// Menu principal
-		.main-menu{
-			.link{
-				display: block;
-				position: relative;
-				font-weight: 700;
-				font-size: pxToEm(30);
-				padding: pxToEm(30, 30) pxToEm(16, 30);
-				color: white;
-				user-select: none;
-
-				&:link, &:visited{
-					color: white;
-					text-decoration: none;
-				}
-				&:hover, &:active{
-					color: $jaune;
-					text-decoration: none;
-					cursor: pointer;
-				}
-
-				&::before{
-					@include before-line();
-				}
-			}
-			
-			.icone{
-				display: inline-block;
-				width: pxToEm(30, 30);
-				height: pxToEm(30, 30);
-				position: relative;
-				top: 0.25em;
-				
-				svg{
-					height: 100%;
-					width: 100%;
-				}
-				
-				&.opened{
-					transform: rotate(90deg);
-				}
-			}
-
-			#collectif::after{
-				@include before-line();
-				top: unset;
-				bottom: 0;
-			}
-		}
-		// Fin du menu principal
-
-
-		// Menu secondaire
-		.sub-menu{
-			.slogan{
-				display: block;
-				position: relative;
-				padding: pxToEm(30, 40) pxToEm(16, 40);
-				font-size: pxToEm(40);
-				font-weight: 700;
-				text-transform: uppercase;
-				line-height: 0.9;
-				user-select: none;
-
-				&:link, &:visited{
-					color: white;
-				}
-				
-				&#pute:hover, &#pute:active{
-					color: $rose;
-				}
-				&#fils:hover, &#fils:active{
-					color: $violet;
-				}
-				&#vigilente:hover, &#vigilente:active{
-					color: $orange;
-				}
-
-				&::before{
-					@include before-line();
-				}
-			}
-			// Fin des slogans
-		}
-		// Fin du menu secondaire
-	}
-	// Fin menu
 }
 // Fin header
+
+.menu{
+	position: fixed;
+	top: pxToEm(46);
+	left: 0;
+	background-color: $dark-grey;
+	width: 100%;
+	box-sizing: border-box;
+	padding: pxToEm(32) pxToEm(16);
+	height: auto;
+	max-height: 100dvh;
+	overflow-y: scroll;
+	z-index: 998;
+
+	// Ouvertures fermetures
+	display: none;
+	.sub-menu{
+		display: none;
+	}
+	.visible, &.visible{
+		display: block;
+	}
+
+
+	// Menu principal
+	.main-menu{
+		.link{
+			display: block;
+			position: relative;
+			font-weight: 700;
+			font-size: pxToEm(30);
+			padding: pxToEm(30, 30) pxToEm(16, 30);
+			color: white;
+			user-select: none;
+
+			&:link, &:visited{
+				color: white;
+				text-decoration: none;
+			}
+			&:hover, &:active{
+				color: $jaune;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			&::before{
+				@include before-line();
+			}
+		}
+		
+		.icone{
+			display: inline-block;
+			width: pxToEm(30, 30);
+			height: pxToEm(30, 30);
+			position: relative;
+			top: 0.25em;
+			
+			svg{
+				height: 100%;
+				width: 100%;
+			}
+			
+			&.opened{
+				transform: rotate(90deg);
+			}
+		}
+
+		#collectif::after{
+			@include before-line();
+			top: unset;
+			bottom: 0;
+		}
+	}
+	// Fin du menu principal
+
+
+	// Menu secondaire
+	.sub-menu{
+		.slogan{
+			display: block;
+			position: relative;
+			padding: pxToEm(30, 40) pxToEm(16, 40);
+			font-size: pxToEm(40);
+			font-weight: 700;
+			text-transform: uppercase;
+			line-height: 0.9;
+			user-select: none;
+
+			&:link, &:visited{
+				color: white;
+			}
+			
+			&#pute:hover, &#pute:active{
+				color: $rose;
+			}
+			&#fils:hover, &#fils:active{
+				color: $violet;
+			}
+			&#vigilente:hover, &#vigilente:active{
+				color: $orange;
+			}
+
+			&::before{
+				@include before-line();
+			}
+		}
+		// Fin des slogans
+	}
+	// Fin du menu secondaire
+}
+// Fin menu
 
 
 @media screen and (min-width: map-get($breakpoints, "desk")){
 	.header{
+		position: relative;
+
 		.header-wrapper{
 			width: 100%;
 			height: pxToEm(100);
-			border-width: clamp(1px, pxToVw(1.5, "desktop"), 2px);
 			border-color: black;
 
 			.title{
@@ -187,66 +192,68 @@
 		#menu-burger{
 			display: none;
 		}
-
-		.menu{
-			position: relative;
-			display: block;
-			background-color: $fake-black;
-			overflow: visible;
-			padding: pxToEm(8) pxToEm(110);
-
-			// Menu principal
-			.main-menu{
-				display: flex;
-				flex-direction: row;
-				align-items: baseline;
-				justify-content: space-between;
-				
-				.link{
-					text-align: center;
-					font-size: pxToEm(24);
-					padding: 0;
-					
-					&::before, &::after{
-						display: none;
-					}
-				}
-			}
-			// Fin du menu principal
-
-			// Menu secondaire
-			.sub-menu{
-				position: absolute;
-				background-color: $dark-grey;
-				top: 100%;
-				left: 0;
-				width: 100vw;
-				height: auto;
-				box-sizing: border-box;
-				padding: 0 pxToEm(52) pxToEm(24);
-				height: fit-content;
-				max-height: calc(100vh - 2.2em - pxToEm(100));
-				overflow-y: scroll;
-
-				.slogan{
-					font-size: pxToEm(70);
-					padding: pxToEm(45, 70) pxToEm(58, 70);
-
-					&#fils::after, &#pute::after{
-						@include before-line();
-						top: unset;
-						bottom: 0;
-					}
-
-					&::before{
-						display: none;
-					}
-				}
-			}
-			// fin du menu secondaire
-		}
-		// Fin menu
 	}
 	// Fin header
+	
+	.menu{
+		position: sticky;
+		top: 0;
+		left: 0;
+		display: block;
+		background-color: $fake-black;
+		overflow: visible;
+		padding: pxToEm(8) pxToEm(110);
+
+		// Menu principal
+		.main-menu{
+			display: flex;
+			flex-direction: row;
+			align-items: baseline;
+			justify-content: space-between;
+			
+			.link{
+				text-align: center;
+				font-size: pxToEm(24);
+				padding: 0;
+				
+				&::before, &::after{
+					display: none;
+				}
+			}
+		}
+		// Fin du menu principal
+
+		// Menu secondaire
+		.sub-menu{
+			position: absolute;
+			background-color: $dark-grey;
+			top: 100%;
+			left: 0;
+			width: 100vw;
+			height: auto;
+			box-sizing: border-box;
+			padding: 0 pxToEm(52) pxToEm(24);
+			height: fit-content;
+			max-height: calc(100vh - 2.2em - pxToEm(100));
+			overflow-y: scroll;
+
+			.slogan{
+				font-size: pxToEm(70);
+				padding: pxToEm(45, 70) pxToEm(58, 70);
+
+				&#fils::after, &#pute::after{
+					@include before-line();
+					top: unset;
+					bottom: 0;
+				}
+
+				&::before{
+					display: none;
+				}
+			}
+		}
+		// fin du menu secondaire
+	}
+	// Fin menu
 }
 // Fin du Media Query

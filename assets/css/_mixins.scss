@@ -1,14 +1,17 @@
+@use "_functions" as *;
+
+// Mixin resonsive pas utilisée dans ce projet
 $breakpoints: (
 	"desk": 767.5px,
 );
 
-// ========== Mixins ==========
 @mixin min-media($_key) {
 	@media screen and (min-width: map-get($breakpoints, $_key)) {
 		&{ @content; }
 	}
 }
 
+// Lignes du menu
 @mixin before-line{
 	content: "";
 	position: absolute;
@@ -17,4 +20,15 @@ $breakpoints: (
 	width: 100%;
 	height: 1px;
 	background-color: white;
+}
+
+// Marges du .main en mobiles et desktop
+@mixin main-marges($media: "mobs"){
+	margin: pxToEm(82) 0;
+	padding: 0 pxToEm(30);
+
+	@if $media == "desk"{
+		margin: pxToEm(90) auto pxToEm(60);
+		padding: 0 pxToEm(110);
+	}
 }

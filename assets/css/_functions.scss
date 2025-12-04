@@ -3,7 +3,7 @@
 	$viewportMobile: 375;
 	$viewportDesktop: 1440;
 
-	@if $viewport ==desktop {
+	@if $viewport == "desktop" {
 		@return ($px / $viewportDesktop) * 100 * 1vw;
 	}
 

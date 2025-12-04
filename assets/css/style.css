@@ -53,7 +53,11 @@ button {
   width: 100%;
   text-align: center;
 }
-.main .cta {
+.main .manifeste, .main .collectif {
+  width: 100%;
+}
+
+.cta {
   display: inline-block;
   font-size: 1.5em;
   padding: 0.625em 1.875em;
@@ -65,16 +69,17 @@ button {
   color: #101010;
   margin-top: 1.5em;
 }
-.main .cta:hover, .main .cta:active {
+.cta:hover, .cta:active {
   background-color: #101010;
   color: #FCFCFC;
   cursor: pointer;
 }
-.main .extern-link {
+
+.extern-link {
   font-weight: 700;
   position: relative;
 }
-.main .extern-link::after {
+.extern-link::after {
   content: "";
   height: 0.09375em;
   width: 100%;
@@ -83,48 +88,47 @@ button {
   left: 0;
   background-color: #101010;
 }
-.main .extern-link:hover, .main .extern-link:active {
+.extern-link:hover, .extern-link:active {
   background-color: #101010;
   color: white;
 }
-.main .extern-link .ext-icon {
+.extern-link .ext-icon {
   display: inline-block;
   position: relative;
   top: 0.15em;
   height: 0.9em;
   width: 0.7em;
 }
-.main .extern-link .ext-icon svg {
+.extern-link .ext-icon svg {
   height: 100%;
   width: 130%;
-}
-.main .manifeste, .main .collectif {
-  width: 100%;
 }
 
 @media screen and (min-width: 767.5px) {
   body {
-    font-size: clamp(14px, 1.1111111111vw, 22px);
+    font-size: clamp(13px, 1.1111111111vw, 22px);
   }
   .main {
-    margin: 12.5em auto 3.75em;
+    margin: 5.125em 0;
+    padding: 0 1.875em;
+    margin: 5.625em auto 3.75em;
     padding: 0 6.875em;
     max-width: 1920px;
   }
   .main .labeur {
     font-size: 1.5em;
   }
-  .main .cta {
+  .cta {
     font-size: 2em;
     padding: 0.625em 1.875em;
     margin-top: 1em;
   }
-  .main .manifest {
+  .manifest {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5em;
   }
-  .main .collectif {
+  .collectif {
     margin: auto;
     max-width: 36.875em;
   }
